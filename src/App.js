@@ -29,8 +29,9 @@ function App() {
 
   return (
     <div className="app">
-      <BookCreate onSubmit={createBook} />
+      <h1>Reading List</h1>
       <BookList books={books} onEdit={editBook} onDelete={deleteBook} />
+      <BookCreate onSubmit={createBook} />
     </div>
   );
 }
