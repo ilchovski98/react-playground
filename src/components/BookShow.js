@@ -3,22 +3,20 @@ import { useState, useContext } from "react";
 import BookEdit from "./BookEdit";
 import BooksContext from "../context/books";
 
-function BookShow({ book, onEdit, onDelete }) {
-  const { count, incrementCount } = useContext(BooksContext);
+function BookShow({ book }) {
+  const { deleteBook } = useContext(BooksContext);
   const [showEdit, setShowEdit] = useState(false);
 
-  const handleEdit = () => {
+  const toggleEditState = () => {
     setShowEdit(!showEdit);
   };
 
   const handleDeleteBook = () => {
-    onDelete(book.id);
+    deleteBook(book.id);
   };
 
-  const handleSubmit = (id, title) => {
-    incrementCount();
-    onEdit(id, title);
-    handleEdit();
+  const handleSubmit = () => {
+    toggleEditState();
   };
 
   let content = <h3>{book.title}</h3>;
@@ -30,9 +28,9 @@ function BookShow({ book, onEdit, onDelete }) {
   return (
     <div className="book-show">
       <img src={`https://picsum.photos/seed/${book.id}/300/200`} alt="books" />
-      <div>{content}</div>ye:{count}
+      <div>{content}</div>
       <div className="actions">
-        <button className="edit" onClick={handleEdit}>
+        <button className="edit" onClick={toggleEditState}>
           Edit
         </button>
 
