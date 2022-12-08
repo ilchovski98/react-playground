@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.0",
     "bulma": "^0.9.4",
+    "classnames": "^2.3.2",
     "json-server": "^0.17.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
@@ -43,6 +44,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.19",
+    "react-icons": "^4.7.1",
     "tailwindcss": "^3.2.4"
   }
 }
