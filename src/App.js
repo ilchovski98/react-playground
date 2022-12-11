@@ -18,9 +18,6 @@ function App() {
 
   return (
     <>
-      <AccordionPage />
-      <ButtonPage />
-      <span>-------------------------------------</span>
       <div className="flex">
         <Dropdown options={options} value={selection} onChange={handleSelection} />
       </div>
