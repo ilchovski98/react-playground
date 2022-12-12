@@ -1,7 +1,5 @@
 import { useState } from 'react';
-import ButtonPage from './pages/ButtonPage';
-import AccordionPage from './pages/AccordionPage';
-import Dropdown from './components/Dropdown';
+import Dropdown from '../components/Dropdown';
 
 function DropdownPage() {
   const [selection, setSelection] = useState(null);
@@ -18,9 +16,6 @@ function DropdownPage() {
 
   return (
     <>
-      <AccordionPage />
-      <ButtonPage />
-      <span>-------------------------------------</span>
       <div className="flex">
         <Dropdown options={options} value={selection} onChange={handleSelection} />
       </div>
