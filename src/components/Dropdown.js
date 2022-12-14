@@ -13,7 +13,6 @@ function Dropdown({ options, value, onChange }) {
       }
 
       if (!divEl.current.contains(event.target)) {
-        console.log('clicked outside');
         setIsOpen(false);
       }
     }
@@ -33,7 +32,15 @@ function Dropdown({ options, value, onChange }) {
   }
 
   const renderedOptions = options.map(option => {
-    return <div className="hover:bg-sky-100 rounded cursor-pointer p-1" key={option.value} onClick={() => handleOptionClick(option)}>{option.label}</div>
+    return (
+      <div
+        className="hover:bg-sky-100 rounded cursor-pointer p-1"
+        key={option.value}
+        onClick={() => handleOptionClick(option)}
+      >
+        {option.label}
+      </div>
+    )
   });
 
   return (
@@ -45,11 +52,6 @@ function Dropdown({ options, value, onChange }) {
         {value?.label || 'Select...'}
         <GoChevronDown />
       </Panel>
-      <div
-
-      >
-
-      </div>
 
       {isOpen && <Panel className="absolute top-full">{renderedOptions}</Panel>}
     </div>
