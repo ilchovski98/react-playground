@@ -19,7 +19,7 @@ function Sidebar() {
   });
 
   return (
-    <div>
+    <div className="sticky top-0 overflow-y-scroll flex flex-col">
       {renderedLinks}
     </div>
   )
