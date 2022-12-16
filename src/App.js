@@ -2,6 +2,7 @@ import DropdownPage from './pages/DropdownPage';
 import AccordionPage from './pages/AccordionPage';
 import ButtonPage from './pages/ButtonPage';
 import ModalPage from './pages/ModalPage';
+import TablePage from './pages/TablePage';
 import Route from './components/Route';
 import Sidebar from './components/Sidebar';
 
@@ -25,6 +26,10 @@ function App() {
 
         <Route path="/modal">
           <ModalPage />
+        </Route>
+
+        <Route path="/table">
+          <TablePage />
         </Route>
       </div>
     </div>
