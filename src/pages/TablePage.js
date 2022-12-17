@@ -1,6 +1,7 @@
-import Table from '../components/Table';
+import SortableTable from '../components/SortableTable';
 
 function TablePage() {
+  // cells
   const data = [
     { name: 'Orange', color: 'bg-orange-500', score: 5 },
     { name: 'Apple', color: 'bg-red-300', score: 3 },
@@ -8,10 +9,22 @@ function TablePage() {
     { name: 'Lime', color: 'bg-green-500', score: 4 }
   ];
 
+  // column header logic
   const config = [
-    { label: 'Name', render: (fruit) => fruit.name },
-    { label: 'Color', render: (fruit) => <div className={`p-3 m-2 ${fruit.color}`}></div>},
-    { label: 'Score', render: (fruit) => fruit.score }
+    { 
+      label: 'Name', 
+      render: (fruit) => fruit.name,
+      sortValue: (fruit) => fruit.name
+    },
+    { 
+      label: 'Color',
+      render: (fruit) => <div className={`p-3 m-2 ${fruit.color}`}></div>
+    },
+    { 
+      label: 'Score',
+      render: (fruit) => fruit.score,
+      sortValue: (fruit) => fruit.score
+    }
   ];
 
   const keyFn = (fruit) => {
@@ -19,7 +32,7 @@ function TablePage() {
   }
 
   return <div>
-    <Table data={data} config={config} keyFn={keyFn} />
+    <SortableTable data={data} config={config} keyFn={keyFn} />
   </div>
 }
 
