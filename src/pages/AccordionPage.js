@@ -4,7 +4,7 @@ function AccordionPage() {
   const items = [
     {
       id: 'asdf',
-      label: 'Do you know React?',
+      label: 'Do you know how to use React?',
       content: 'Of course! I have been doing it for 3 years now!'
     },
     {
